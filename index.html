@@ -61,23 +61,23 @@
             font-size: 1.5em;
         }
 
-        .about, .services, .testimonials {
+        .about, .services, .testimonials, .team, .blog, .partners {
             margin: 40px 0;
         }
 
-        .about h2, .services h2, .testimonials h2 {
+        .about h2, .services h2, .testimonials h2, .team h2, .blog h2, .partners h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #28a745; /* Verde vibrante para títulos */
         }
 
-        .services .service-list {
+        .services .service-list, .team .team-list, .blog .blog-list, .partners .partner-list {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
-        .service-item {
+        .service-item, .team-item, .blog-item, .partner-item {
             background: white;
             padding: 20px;
             margin: 10px;
@@ -87,20 +87,9 @@
             border-top: 4px solid #28a745; /* Borda verde no topo */
         }
 
-        .testimonials .testimonial-list {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .testimonial-item {
-            background: white;
-            padding: 20px;
-            margin: 10px;
-            width: 30%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-top: 4px solid #28a745; /* Borda verde no topo */
+        .team-item img, .partner-item img {
+            max-width: 100%;
+            border-radius: 50%;
         }
 
         footer {
@@ -122,7 +111,10 @@
     <nav>
         <a href="#about">Sobre</a>
         <a href="#services">Serviços</a>
+        <a href="#team">Equipe</a>
         <a href="#testimonials">Depoimentos</a>
+        <a href="#blog">Blog</a>
+        <a href="#partners">Parceiros</a>
         <a href="#contact">Contato</a>
     </nav>
 
@@ -136,7 +128,7 @@
     <div class="container">
         <section id="about" class="about">
             <h2>Sobre Nós</h2>
-            <p>Somos uma empresa dedicada a fornecer soluções de alta qualidade para nossos clientes. Com anos de experiência no mercado, estamos prontos para ajudar você a alcançar seus objetivos.</p>
+            <p>Somos uma empresa dedicada a fornecer soluções de alta qualidade para nossos clientes. Com anos de experiência no mercado, estamos prontos para ajudar você a alcançar seus objetivos. Nossa missão é oferecer serviços que impulsionem o crescimento do seu negócio, com foco em inovação e sustentabilidade.</p>
         </section>
 
         <section id="services" class="services">
@@ -157,6 +149,27 @@
             </div>
         </section>
 
+        <section id="team" class="team">
+            <h2>Nossa Equipe</h2>
+            <div class="team-list">
+                <div class="team-item">
+                    <img src="team1.jpg" alt="Membro da Equipe 1">
+                    <h3>João Silva</h3>
+                    <p>CEO e Fundador</p>
+                </div>
+                <div class="team-item">
+                    <img src="team2.jpg" alt="Membro da Equipe 2">
+                    <h3>Maria Souza</h3>
+                    <p>Diretora de Marketing</p>
+                </div>
+                <div class="team-item">
+                    <img src="team3.jpg" alt="Membro da Equipe 3">
+                    <h3>Carlos Oliveira</h3>
+                    <p>Desenvolvedor Sênior</p>
+                </div>
+            </div>
+        </section>
+
         <section id="testimonials" class="testimonials">
             <h2>Depoimentos</h2>
             <div class="testimonial-list">
@@ -171,6 +184,45 @@
                 <div class="testimonial-item">
                     <p>"Recomendo a todos que buscam qualidade e eficiência."</p>
                     <p>- Mais um Cliente</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <h2>Blog</h2>
+            <div class="blog-list">
+                <div class="blog-item">
+                    <h3>Como aumentar sua presença online</h3>
+                    <p>Dicas práticas para melhorar sua visibilidade na internet.</p>
+                    <a href="#">Leia mais</a>
+                </div>
+                <div class="blog-item">
+                    <h3>Benefícios do Marketing Digital</h3>
+                    <p>Entenda por que investir em marketing digital é essencial.</p>
+                    <a href="#">Leia mais</a>
+                </div>
+                <div class="blog-item">
+                    <h3>Tendências de Desenvolvimento Web</h3>
+                    <p>As últimas tendências em desenvolvimento web para 2023.</p>
+                    <a href="#">Leia mais</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="partners" class="partners">
+            <h2>Nossos Parceiros</h2>
+            <div class="partner-list">
+                <div class="partner-item">
+                    <img src="partner1.png" alt="Parceiro 1">
+                    <p>Empresa Tech</p>
+                </div>
+                <div class="partner-item">
+                    <img src="partner2.png" alt="Parceiro 2">
+                    <p>Inova Solutions</p>
+                </div>
+                <div class="partner-item">
+                    <img src="partner3.png" alt="Parceiro 3">
+                    <p>Digital Marketing Pro</p>
                 </div>
             </div>
         </section>
