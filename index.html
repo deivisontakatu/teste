@@ -24,6 +24,9 @@
             display: flex;
             justify-content: center;
             background-color: #218838; /* Verde mais escuro */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -61,23 +64,23 @@
             font-size: 1.5em;
         }
 
-        .about, .services, .testimonials, .team, .blog, .partners {
+        .about, .services, .values, .stats, .team, .testimonials, .blog, .partners, .contact {
             margin: 40px 0;
         }
 
-        .about h2, .services h2, .testimonials h2, .team h2, .blog h2, .partners h2 {
+        .about h2, .services h2, .values h2, .stats h2, .team h2, .testimonials h2, .blog h2, .partners h2, .contact h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #28a745; /* Verde vibrante para títulos */
         }
 
-        .services .service-list, .team .team-list, .blog .blog-list, .partners .partner-list {
+        .services .service-list, .team .team-list, .blog .blog-list, .partners .partner-list, .values .values-list, .stats .stats-list {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
-        .service-item, .team-item, .blog-item, .partner-item {
+        .service-item, .team-item, .blog-item, .partner-item, .value-item, .stat-item {
             background: white;
             padding: 20px;
             margin: 10px;
@@ -92,12 +95,70 @@
             border-radius: 50%;
         }
 
+        .stats .stats-list {
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .stat-item p {
+            font-size: 1.2em;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input, .contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #218838;
+        }
+
         footer {
             background-color: #218838; /* Verde escuro para o rodapé */
             color: white;
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: none;
+        }
+
+        .back-to-top:hover {
+            background-color: #218838;
         }
     </style>
 </head>
@@ -111,6 +172,8 @@
     <nav>
         <a href="#about">Sobre</a>
         <a href="#services">Serviços</a>
+        <a href="#values">Valores</a>
+        <a href="#stats">Estatísticas</a>
         <a href="#team">Equipe</a>
         <a href="#testimonials">Depoimentos</a>
         <a href="#blog">Blog</a>
@@ -145,6 +208,42 @@
                 <div class="service-item">
                     <h3>Marketing Digital</h3>
                     <p>Estratégias de marketing digital para aumentar sua presença online.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="values" class="values">
+            <h2>Nossos Valores</h2>
+            <div class="values-list">
+                <div class="value-item">
+                    <h3>Inovação</h3>
+                    <p>Buscamos constantemente novas soluções para atender às necessidades dos nossos clientes.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Integridade</h3>
+                    <p>Agimos com transparência e ética em todos os nossos negócios.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Sustentabilidade</h3>
+                    <p>Comprometidos com práticas que respeitam o meio ambiente e a sociedade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats" class="stats">
+            <h2>Estatísticas</h2>
+            <div class="stats-list">
+                <div class="stat-item">
+                    <h3>+500</h3>
+                    <p>Clientes Satisfeitos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>+100</h3>
+                    <p>Projetos Concluídos</p>
+                </div>
+                <div class="stat-item">
+                    <h3>+10</h3>
+                    <p>Anos de Experiência</p>
                 </div>
             </div>
         </section>
@@ -226,12 +325,36 @@
                 </div>
             </div>
         </section>
+
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu E-mail" required>
+                <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
     </div>
 
-    <footer id="contact">
+    <footer>
         <p>&copy; 2023 Minha Empresa. Todos os direitos reservados.</p>
         <p>Contato: contato@minhaempresa.com | (11) 1234-5678</p>
     </footer>
 
+    <a href="#" class="back-to-top" title="Voltar ao Topo">↑</a>
+
+    <script>
+        // Botão "Voltar ao Topo"
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
